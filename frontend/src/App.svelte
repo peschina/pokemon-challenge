@@ -1,12 +1,13 @@
 <script>
+  import Home from "./components/Home.svelte";
 </script>
 
 <main role="main">
-  <h1>hello world</h1>
+  <Home />
 </main>
 
 <style>
   main {
-    margin-top: 65px;
+    min-height: 100vh;
   }
 </style>

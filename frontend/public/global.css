@@ -1,6 +1,26 @@
+:root {
+  --background: #fafafa;
+  --primary: #141414;
+  --secondary: #696969;
+}
+
 html,
 body {
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: var(--background);
+  font-family: "Montserrat", sans-serif !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+div, span, input, button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: calc(100vw - 10%) !important;
 }
