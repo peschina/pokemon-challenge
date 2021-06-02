@@ -1,0 +1,40 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "svelte-check": "svelte-check",
+    "build:local": "rollup -c",
+    "build:stag": "rollup -c --configEnv=staging",
+    "build:prod": "rollup -c --configEnv=production",
+    "dev": "rollup -c -w",
+    "start": "sirv build -s"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-html": "^0.2.3",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@rollup/plugin-replace": "^2.4.1",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.8",
+    "rollup": "^2.42.3",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.35.0",
+    "svelte-check": "^1.2.6",
+    "svelte-persistent-store": "^0.1.6",
+    "svelte-preprocess": "^4.6.9",
+    "svelte-routing": "^1.5.0"
+  },
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "regenerator-runtime": "^0.13.7",
+    "sirv-cli": "^1.0.11"
+  }
+}
