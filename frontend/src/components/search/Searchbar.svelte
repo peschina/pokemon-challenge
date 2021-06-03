@@ -1,9 +1,13 @@
 <script>
-  let search = "";
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
+
+  export let search = "";
 
   const submitSearch = (e) => {
     if (search == "") return;
-    if (e.key == "Enter") console.log("click", search, e.detail);
+    if (e.key == "Enter") dispatch("searchPokemon");
   };
 </script>
 

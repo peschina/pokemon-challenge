@@ -9,7 +9,7 @@
 </script>
 
 {#if result}
-  <div class="result-wrapper" in:fade={{ duration: 300, delay: 300 }}>
+  <div class="result-wrapper" in:fade={{ duration: 250, delay: 250 }}>
     <div class="text-wrapper">
       <span class="name">{result.name}:</span>
       <span class="description">{result.description}</span>
@@ -33,6 +33,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     padding-bottom: 0.8rem;
+    text-transform: capitalize;
   }
   .description {
     font-size: 1.1rem;

@@ -2,15 +2,25 @@
   import Result from "./Result.svelte";
   import Searchbar from "./Searchbar.svelte";
 
-  let result = {
-    name: "Ditto",
-    description:
-      "It can freely recombine its own cellular structure to\ntransform into other life-forms.",
+  let search = "";
+
+  let result;
+
+  const handleSearchPokemon = async () => {
+    try {
+      const res = await fetch(`${env.API_URL}/pokemon/${search}`);
+      result = await res.json();
+      search = "";
+    } catch (error) {
+      result = null;
+      console.log("err", error);
+      // display alert
+    }
   };
 </script>
 
 <div class="search-layout">
-  <Searchbar />
+  <Searchbar bind:search on:searchPokemon={handleSearchPokemon} />
   <Result {result} />
 </div>
 
