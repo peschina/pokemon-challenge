@@ -1,6 +1,7 @@
 <script>
   import Result from "./Result.svelte";
   import Searchbar from "./Searchbar.svelte";
+  import { getPokemonDescription } from "../../services/pokemonService";
 
   let search = "";
 
@@ -8,8 +9,7 @@
 
   const handleSearchPokemon = async () => {
     try {
-      const res = await fetch(`${env.API_URL}/pokemon/${search}`);
-      result = await res.json();
+      result = await getPokemonDescription(search);
       search = "";
     } catch (error) {
       result = null;

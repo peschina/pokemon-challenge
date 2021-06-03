@@ -39,7 +39,7 @@
     font-size: 1.1rem;
   }
   .favorite-icon {
-    color: red;
+    color: #da0825;
     font-size: 2rem;
     padding-left: 1rem;
   }

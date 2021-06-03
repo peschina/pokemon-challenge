@@ -6,13 +6,14 @@ error handling
 edge cases (limit to pokemon api calls?)
 logging
 more tests
-cors
+replace /t
 
 
 TO DO frontend
 
-result
 favorites section
 favorites list
 favorites store
 animations
+error handling
+alerts and feedback
