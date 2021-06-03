@@ -20,7 +20,3 @@ body::-webkit-scrollbar {
 div, span, input, button {
   font-family: "Montserrat", sans-serif;
 }
-
-.container {
-  max-width: calc(100vw - 10%) !important;
-}

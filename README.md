@@ -16,4 +16,3 @@ favorites section
 favorites list
 favorites store
 animations
-font

@@ -18,13 +18,12 @@
 
 <style>
   .input-wrapper {
-    background-color: var(--background);
     border-radius: 20px;
     border: 1px solid var(--secondary);
     box-shadow: 0px 1px 6px #00000029;
     display: flex;
     padding: 8px 16px;
-    width: 100%;
+    width: -webkit-fill-available;
   }
   @media (min-width: 768px) {
     .input-wrapper {
@@ -33,7 +32,7 @@
   }
   @media (min-width: 1200px) {
     .input-wrapper {
-      width: 40%;
+      width: 50%;
     }
   }
   span {
@@ -41,6 +40,7 @@
     padding-right: 8px;
   }
   input {
+    background-color: var(--background);
     border: none;
     width: 100%;
   }
