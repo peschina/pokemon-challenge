@@ -1,8 +1,16 @@
 const express = require("express");
 const error = require("./middleware/error");
 const pokemon = require("./routes/pokemon");
+const cors = require("cors");
 
 const app = express();
+
+app.use(
+  cors({
+    origin: 'http://localhost:5000',
+    optionsSuccessStatus: 200
+  })
+);
 
 app.use(express.json());
 app.use("/api/pokemon", pokemon);

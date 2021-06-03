@@ -19,7 +19,7 @@ describe("GET /api/pokemon", () => {
     );
   });
 
-  it("should return 404 if pokeman name is not in params", async () => {
+  it("should return 404 if pokemon name is not in params", async () => {
     const res = await request(server).get(`${apiUrl}/`);
     expect(res.status).toBe(404);
   });
@@ -35,7 +35,7 @@ describe("GET /api/pokemon", () => {
     expect(res.status).toBe(400);
   });
 
-  it("should return 404 if pokeman with given name doesn't exist", async () => {
+  it("should return 404 if pokemon with given name doesn't exist", async () => {
     const res = await request(server).get(`${apiUrl}/foo`);
     expect(res.status).toBe(404);
   });
