@@ -1,4 +1,5 @@
 <script>
+  import FavoritesWrapper from "./favorites/FavoritesWrapper.svelte";
   import SearchWrapper from "./search/SearchWrapper.svelte";
 </script>
 
@@ -7,11 +8,14 @@
 </div>
 <div class="wrapper">
   <SearchWrapper />
+  <FavoritesWrapper />
 </div>
 
 <style>
   .wrapper {
+    align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding-top: 3rem;
   }
