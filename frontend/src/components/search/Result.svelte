@@ -1,11 +1,16 @@
 <script>
   import { fade } from "svelte/transition";
+  import { favorites } from "../../lib/store";
 
   export let result;
 
-  let favorite = false;
+  // use id
+  $: isFavorite = $favorites.find(i => i.name == result?.name);
 
-  const handleFavoriteClick = () => (favorite = !favorite);
+  const handleFavoriteClick = () =>
+    ($favorites = isFavorite
+      ? $favorites.filter((i) => i.name != result.name)
+      : [...$favorites, result]);
 </script>
 
 {#if result}
@@ -15,7 +20,7 @@
       <span class="description">{result.description}</span>
     </div>
     <span class="material-icons favorite-icon" on:click={handleFavoriteClick}
-      >{`favorite${favorite ? "" : "_border"}`}</span>
+      >{`favorite${isFavorite ? "" : "_border"}`}</span>
   </div>
 {/if}
 

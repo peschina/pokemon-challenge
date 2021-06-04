@@ -1,7 +1,7 @@
 <script>
   import Result from "./Result.svelte";
   import Searchbar from "./Searchbar.svelte";
-  import { getPokemonDescription } from "../../services/pokemonService";
+  import { getPokemonDescription } from "../../services/pokemonServices";
 
   let search = "";
 
