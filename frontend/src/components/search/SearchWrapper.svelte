@@ -1,7 +1,9 @@
 <script>
   import ErrorMessageAlert from "../common/ErrorMessageAlert.svelte";
+  import Loading from "../common/Loading.svelte";
   import Pokemon from "../common/Pokemon.svelte";
   import Searchbar from "./Searchbar.svelte";
+  import { loading } from "../../lib/store";
   import { getPokemonDescription } from "../../services/pokemonServices";
 
   let search = "";
@@ -27,8 +29,12 @@
 
 <div class="container">
   <Searchbar bind:search on:searchPokemon={handleSearchPokemon} />
-  <ErrorMessageAlert {error} />
-  {#if pokemon}
-    <Pokemon {pokemon} />
+  {#if $loading}
+    <Loading />
+  {:else}
+    <ErrorMessageAlert {error} />
+    {#if pokemon}
+      <Pokemon {pokemon} />
+    {/if}
   {/if}
 </div>
