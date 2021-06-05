@@ -2,14 +2,15 @@
   export let showMobileMenu;
 </script>
 
-<span
-  class="material-icons toggler"
-  on:click={() => (showMobileMenu = !showMobileMenu)}>menu</span>
+<img
+  class="toggler"
+  src="assets/menu.svg"
+  alt="menu-toggler"
+  on:click={() => (showMobileMenu = !showMobileMenu)} />
 
 <style>
   .toggler {
-    font-size: 2rem;
-    color: var(--secondary);
+    width: 2rem;
   }
 
   @media (min-width: 576px) {

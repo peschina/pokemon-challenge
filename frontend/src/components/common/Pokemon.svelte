@@ -17,8 +17,10 @@
     <span class="name">{pokemon.name}:</span>
     <span class="description">{pokemon.description}</span>
   </div>
-  <span class="material-icons favourite-icon" on:click={handleFavouriteClick}
-    >{`favorite${isFavourite ? "" : "_border"}`}</span>
+  <img
+    src={`assets/favorite${isFavourite ? "" : "_border"}.svg`}
+    alt="favourite-icon"
+    on:click={handleFavouriteClick} />
 </div>
 
 <style>
@@ -41,10 +43,9 @@
   .description {
     font-size: 1.1rem;
   }
-  .favourite-icon {
-    color: var(--tertiary);
+  img {
     cursor: pointer;
-    font-size: 2rem;
     padding-left: 1rem;
+    width: 2rem;
   }
 </style>

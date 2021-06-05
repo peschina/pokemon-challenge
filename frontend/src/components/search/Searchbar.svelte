@@ -12,7 +12,7 @@
 </script>
 
 <div class="input-wrapper">
-  <span class="material-icons">search</span>
+  <img src="assets/search.svg" alt="search-icon" />
   <input
     placeholder="Search a Pokemon by name..."
     type="text"
@@ -39,9 +39,8 @@
       width: 50%;
     }
   }
-  span {
-    color: var(--secondary);
-    padding-right: 8px;
+  img {
+    padding-right: .5rem;
   }
   input {
     background-color: var(--background);
