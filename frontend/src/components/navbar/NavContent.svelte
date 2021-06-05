@@ -28,8 +28,8 @@
   .title {
     color: var(--tertiary);
     font-size: 1.7rem;
-    font-style: italic;
     font-weight: 600;
+    opacity: .8;
     padding-left: 1.5rem;
   }
   .links-container {

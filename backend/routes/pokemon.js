@@ -37,8 +37,10 @@ router.get("/:name", async (req, res, next) => {
       i => i.language.name == "en"
     ).flavor_text;
     const descriptionSanitazed = description
-      .replace("\n", " ")
-      .replace("\f", " ");
+      .replace(/\n/g, " ")
+      .replace(/\f/g, " ");
+
+    console.log("descriptionSanitazed", descriptionSanitazed);
 
     res.send({ name: pokemon.name, description: descriptionSanitazed });
   } catch (err) {

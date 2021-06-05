@@ -17,6 +17,13 @@ describe("GET /api/pokemon", () => {
       "description",
       "It can freely recombine its own cellular structure to transform into other life-forms."
     );
+    const res2 = await request(server).get(`${apiUrl}/charizard`);
+    expect(res2.status).toBe(200);
+    expect(res2.body).toHaveProperty("name", "charizard");
+    expect(res2.body).toHaveProperty(
+      "description",
+      "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally."
+    );
   });
 
   it("should return 400 if pokemon name is not in params", async () => {

@@ -19,7 +19,7 @@
       pokemon = await getPokemonDescription(search);
       search = "";
     } catch (ex) {
-      error = ex.message.error;
+      error = ex.message.error || "Whoops, looks like something went wrong.";
       pokemon = null;
     }
   };

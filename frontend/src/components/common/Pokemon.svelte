@@ -43,6 +43,7 @@
   }
   .favourite-icon {
     color: var(--tertiary);
+    cursor: pointer;
     font-size: 2rem;
     padding-left: 1rem;
   }
