@@ -12,13 +12,13 @@
       : [...$favourites, pokemon]);
 </script>
 
-<div class="pokemon-wrapper" in:fade={{ duration: 250, delay: 250 }}>
+<div class="pokemon-wrapper" in:fade>
   <div class="text-wrapper">
     <span class="name">{pokemon.name}:</span>
     <span class="description">{pokemon.description}</span>
   </div>
   <span class="material-icons favourite-icon" on:click={handleFavouriteClick}
-    >{`favourite${isFavourite ? "" : "_border"}`}</span>
+    >{`favorite${isFavourite ? "" : "_border"}`}</span>
 </div>
 
 <style>

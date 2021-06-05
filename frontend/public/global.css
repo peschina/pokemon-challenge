@@ -38,15 +38,15 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem calc(100vw - 95%) 0 calc(100vw - 95%);
+  padding: 3rem calc(100vw - 95%) 1.5rem calc(100vw - 95%);
 }
 @media (min-width: 768px) {
   .container {
-    padding: 3rem calc(100vw - 90%) 0 calc(100vw - 90%);
+    padding: 3rem calc(100vw - 90%) 1.5rem calc(100vw - 90%);
   }
 }
 @media (min-width: 1200px) {
   .container {
-    padding: 3rem calc(100vw - 75%) 0 calc(100vw - 75%);
+    padding: 3rem calc(100vw - 75%) 1.5rem calc(100vw - 75%);
   }
 }

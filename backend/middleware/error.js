@@ -1,4 +1,4 @@
 module.exports = (err, req, res, next) => {
-    // log error
-    res.status(500).send("Whoops. Looks like something failed");
-  }
+  // log error
+  res.status(500).json({ error: "Whoops. Looks like something failed" });
+};
