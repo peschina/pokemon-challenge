@@ -1,12 +1,12 @@
 <script>
-  import Result from "../search/Result.svelte";
+  import Pokemon from "../common/Pokemon.svelte";
   import { favorites } from "../../lib/store";
 </script>
 
 <ul>
-  {#each $favorites as item}
+  {#each $favorites as pokemon}
     <li>
-      <Result result={item} />
+      <Pokemon {pokemon} />
     </li>
   {/each}
 </ul>

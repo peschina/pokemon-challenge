@@ -11,9 +11,6 @@ replace /t
 
 TO DO frontend
 
-favorites section
-favorites list
-favorites store
 animations
 error handling
 alerts and feedback

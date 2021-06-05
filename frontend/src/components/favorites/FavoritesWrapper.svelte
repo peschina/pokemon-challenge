@@ -2,15 +2,16 @@
   import FavoritesList from "./FavoritesList.svelte";
 </script>
 
-<div>
-  <span>FAVORITES</span>
+<div class="container">
+  <span>YOUR FAVORITE</span>
   <FavoritesList />
 </div>
 
 <style>
-  div {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2rem;
+  span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.0125em;
+    opacity: 0.8;
   }
 </style>

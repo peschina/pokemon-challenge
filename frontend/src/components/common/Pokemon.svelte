@@ -2,29 +2,27 @@
   import { fade } from "svelte/transition";
   import { favorites } from "../../lib/store";
 
-  export let result;
+  export let pokemon;
 
-  $: isFavorite = $favorites.find(i => i.name == result?.name);
+  $: isFavorite = $favorites.find((i) => i.name == pokemon?.name);
 
   const handleFavoriteClick = () =>
     ($favorites = isFavorite
-      ? $favorites.filter((i) => i.name != result.name)
-      : [...$favorites, result]);
+      ? $favorites.filter((i) => i.name != pokemon.name)
+      : [...$favorites, pokemon]);
 </script>
 
-{#if result}
-  <div class="result-wrapper" in:fade={{ duration: 250, delay: 250 }}>
-    <div class="text-wrapper">
-      <span class="name">{result.name}:</span>
-      <span class="description">{result.description}</span>
-    </div>
-    <span class="material-icons favorite-icon" on:click={handleFavoriteClick}
-      >{`favorite${isFavorite ? "" : "_border"}`}</span>
+<div class="pokemon-wrapper" in:fade={{ duration: 250, delay: 250 }}>
+  <div class="text-wrapper">
+    <span class="name">{pokemon.name}:</span>
+    <span class="description">{pokemon.description}</span>
   </div>
-{/if}
+  <span class="material-icons favorite-icon" on:click={handleFavoriteClick}
+    >{`favorite${isFavorite ? "" : "_border"}`}</span>
+</div>
 
 <style>
-  .result-wrapper {
+  .pokemon-wrapper {
     align-items: center;
     display: flex;
     padding-top: 2rem;
@@ -36,6 +34,7 @@
   .name {
     font-size: 1.3rem;
     font-weight: 600;
+    opacity: 0.8;
     padding-bottom: 0.8rem;
     text-transform: capitalize;
   }
