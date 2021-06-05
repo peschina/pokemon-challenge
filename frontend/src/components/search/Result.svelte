@@ -4,7 +4,6 @@
 
   export let result;
 
-  // use id
   $: isFavorite = $favorites.find(i => i.name == result?.name);
 
   const handleFavoriteClick = () =>
@@ -44,7 +43,7 @@
     font-size: 1.1rem;
   }
   .favorite-icon {
-    color: #da0825;
+    color: var(--tertiary);
     font-size: 2rem;
     padding-left: 1rem;
   }
