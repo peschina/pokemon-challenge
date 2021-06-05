@@ -15,18 +15,18 @@ describe("GET /api/pokemon", () => {
     expect(res.body).toHaveProperty("name", "ditto");
     expect(res.body).toHaveProperty(
       "description",
-      "It can freely recombine its own cellular structure to\ntransform into other life-forms."
+      "It can freely recombine its own cellular structure to transform into other life-forms."
     );
   });
 
-  it("should return 404 if pokemon name is not in params", async () => {
+  it("should return 400 if pokemon name is not in params", async () => {
     const res = await request(server).get(`${apiUrl}/`);
-    expect(res.status).toBe(404);
+    expect(res.status).toBe(400);
   });
 
-  it("should return 404 if name param is an empty string", async () => {
+  it("should return 400 if name param is an empty string", async () => {
     const res = await request(server).get(`${apiUrl}/${""}`);
-    expect(res.status).toBe(404);
+    expect(res.status).toBe(400);
   });
 
   it("should return 400 if name has more than 32 char", async () => {
