@@ -40,8 +40,6 @@ router.get("/:name", async (req, res, next) => {
       .replace(/\n/g, " ")
       .replace(/\f/g, " ");
 
-    console.log("descriptionSanitazed", descriptionSanitazed);
-
     res.send({ name: pokemon.name, description: descriptionSanitazed });
   } catch (err) {
     next(err);

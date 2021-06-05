@@ -1,13 +1,16 @@
 const express = require("express");
+const cors = require("cors");
 const error = require("./middleware/error");
 const pokemon = require("./routes/pokemon");
-const cors = require("cors");
+const { initLogger } = require("./lib/logger");
 
 const app = express();
 
+initLogger();
+
 app.use(
   cors({
-    origin: 'http://localhost:5000',
+    origin: "http://localhost:5000",
     optionsSuccessStatus: 200
   })
 );
