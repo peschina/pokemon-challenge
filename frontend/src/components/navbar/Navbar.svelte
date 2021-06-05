@@ -1,28 +1,13 @@
 <script>
   import { onMount } from "svelte";
-  import NavLinks from "./NavLinks.svelte";
+
+  import NavContent from "./NavContent.svelte";
+  import { historyEventsDispatcher } from "../../lib/helpers";
 
   let pathname;
 
-  history.pushState = ((f) =>
-    function pushState() {
-      let ret = f.apply(this, arguments);
-      window.dispatchEvent(new Event("pushstate"));
-      window.dispatchEvent(new Event("locationchange"));
-      return ret;
-    })(history.pushState);
-
-  history.replaceState = ((f) =>
-    function replaceState() {
-      let ret = f.apply(this, arguments);
-      window.dispatchEvent(new Event("replacestate"));
-      window.dispatchEvent(new Event("locationchange"));
-      return ret;
-    })(history.replaceState);
-
-  window.addEventListener("popstate", () =>
-    window.dispatchEvent(new Event("locationchange"))
-  );
+  // dispatch locationchange event on all history changes
+  historyEventsDispatcher();
 
   window.addEventListener("locationchange", () => {
     window.scrollTo(0, 0);
@@ -36,23 +21,29 @@
 </script>
 
 <nav>
-  <span>Pokemon Searcher</span>
-  <NavLinks {pathname} />
+  <NavContent {pathname} />
 </nav>
 
 <style>
   nav {
-    align-items: center;
+    align-items: start;
     background-color: rgba(6, 0, 19, 0.05);
     display: flex;
-    justify-content: space-between;
-    padding: 0.8rem 3rem;
+    flex-direction: column;
+    padding: 1rem;
   }
-  span {
-    color: var(--tertiary);
-    font-size: 1.7rem;
-    font-style: italic;
-    font-weight: 600;
-    padding-left: 1.5rem;
+
+  @media (min-width: 576px) {
+    nav {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+    }
+  }
+  @media (min-width: 768px) {
+    nav {
+      padding: 0.8rem 3rem;
+    }
   }
 </style>
