@@ -1,15 +1,15 @@
 <script>
   import { fade } from "svelte/transition";
-  import { favorites } from "../../lib/store";
+  import { favourites } from "../../lib/store";
 
   export let pokemon;
 
-  $: isFavorite = $favorites.find((i) => i.name == pokemon?.name);
+  $: isFavourite = $favourites.find((i) => i.name == pokemon?.name);
 
-  const handleFavoriteClick = () =>
-    ($favorites = isFavorite
-      ? $favorites.filter((i) => i.name != pokemon.name)
-      : [...$favorites, pokemon]);
+  const handleFavouriteClick = () =>
+    ($favourites = isFavourite
+      ? $favourites.filter((i) => i.name != pokemon.name)
+      : [...$favourites, pokemon]);
 </script>
 
 <div class="pokemon-wrapper" in:fade={{ duration: 250, delay: 250 }}>
@@ -17,8 +17,8 @@
     <span class="name">{pokemon.name}:</span>
     <span class="description">{pokemon.description}</span>
   </div>
-  <span class="material-icons favorite-icon" on:click={handleFavoriteClick}
-    >{`favorite${isFavorite ? "" : "_border"}`}</span>
+  <span class="material-icons favourite-icon" on:click={handleFavouriteClick}
+    >{`favourite${isFavourite ? "" : "_border"}`}</span>
 </div>
 
 <style>
@@ -41,7 +41,7 @@
   .description {
     font-size: 1.1rem;
   }
-  .favorite-icon {
+  .favourite-icon {
     color: var(--tertiary);
     font-size: 2rem;
     padding-left: 1rem;

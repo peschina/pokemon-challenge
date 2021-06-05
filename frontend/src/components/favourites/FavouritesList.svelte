@@ -1,10 +1,10 @@
 <script>
   import Pokemon from "../common/Pokemon.svelte";
-  import { favorites } from "../../lib/store";
+  import { favourites } from "../../lib/store";
 </script>
 
 <ul>
-  {#each $favorites as pokemon}
+  {#each $favourites as pokemon}
     <li>
       <Pokemon {pokemon} />
     </li>

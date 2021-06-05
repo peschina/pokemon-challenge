@@ -1,10 +1,10 @@
 <script>
-  import FavoritesList from "./FavoritesList.svelte";
+  import FavouritesList from "./FavouritesList.svelte";
 </script>
 
 <div class="container">
-  <span>YOUR FAVORITE</span>
-  <FavoritesList />
+  <span>YOUR FAVOURITE</span>
+  <FavouritesList />
 </div>
 
 <style>
