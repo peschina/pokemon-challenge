@@ -40,7 +40,7 @@
     }
   }
   img {
-    padding-right: .5rem;
+    padding-right: 0.5rem;
   }
   input {
     background-color: var(--background);
