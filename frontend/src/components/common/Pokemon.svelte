@@ -1,15 +1,20 @@
 <script>
   import { fade } from "svelte/transition";
   import { favourites } from "../../lib/store";
+  import {
+    addToFavourites,
+    isPokemonFavourite,
+    removeFromFavourites,
+  } from "../../services/favouritesServices";
 
   export let pokemon;
 
-  $: isFavourite = $favourites.find((i) => i.name == pokemon?.name);
+  $: isFavourite = isPokemonFavourite(pokemon, $favourites);
 
   const handleFavouriteClick = () =>
-    ($favourites = isFavourite
-      ? $favourites.filter((i) => i.name != pokemon.name)
-      : [...$favourites, pokemon]);
+    isPokemonFavourite(pokemon)
+      ? removeFromFavourites(pokemon)
+      : addToFavourites(pokemon);
 </script>
 
 <div class="pokemon-wrapper" in:fade>
