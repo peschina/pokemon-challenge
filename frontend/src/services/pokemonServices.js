@@ -5,16 +5,22 @@ import { GET } from "./httpServices";
 export const getPokemonDescription = async (name) => {
   try {
     const cached = get(searchHistory)[name];
-    if (cached) return cached;
+    if (cached) {
+      if (cached.message) throw cached;
+      return cached;
+    }
 
     const res = await GET(`/pokemon/${name}`);
-
-    const historyClone = { ...get(searchHistory) };
-    historyClone[name] = res;
-    searchHistory.set(historyClone);
-    
+    cacheSearch(name, res)
     return res;
   } catch (error) {
+    cacheSearch(name, error)
     throw error;
   }
 };
+
+const cacheSearch = (search, res) => {
+  const historyClone = { ...get(searchHistory) };
+  historyClone[search] = res;
+  searchHistory.set(historyClone);
+}
