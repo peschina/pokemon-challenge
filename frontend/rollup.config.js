@@ -99,10 +99,7 @@ export default CLIArgs => {
 				sourceMap: watchDir ? true : false,
 				use: [
 					['sass', {
-						includePaths: [
-							'./theme',
-							'./node_modules'
-						]
+						includePaths: ['./node_modules'],
 					}]
 				]
 			}),

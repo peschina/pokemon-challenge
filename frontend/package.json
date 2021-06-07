@@ -1,5 +1,6 @@
 {
   "name": "svelte-app",
+  "description": "A simple app to search for a pokemon description",
   "version": "1.0.0",
   "scripts": {
     "svelte-check": "svelte-check",
@@ -8,7 +9,7 @@
     "build:prod": "rollup -c --configEnv=production",
     "dev": "rollup -c -w",
     "start": "sirv build -s",
-    "test": "jest"
+    "test": "jest --verbose --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -42,5 +43,11 @@
     "core-js": "^3.9.1",
     "regenerator-runtime": "^0.13.7",
     "sirv-cli": "^1.0.11"
-  }
+  },
+  "author": "Sara Zanellato",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peschina/pokemon-challenge.git"
+  },
+  "license": "MIT"
 }

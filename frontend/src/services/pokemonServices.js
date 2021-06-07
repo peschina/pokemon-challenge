@@ -6,7 +6,7 @@ export const getPokemonDescription = async (name) => {
   try {
     const cached = get(searchHistory)[name];
     if (cached) {
-      if (cached.message) throw cached;
+      if (cached.message) throw cached; // we cached a 404 Error
       return cached;
     }
 
@@ -14,13 +14,10 @@ export const getPokemonDescription = async (name) => {
     cacheSearch(name, res);
     return res;
   } catch (error) {
-    cacheSearch(name, error);
+    if (error.status == 404) cacheSearch(name, error);
     throw error;
   }
 };
 
-const cacheSearch = (search, res) => {
-  const historyClone = { ...get(searchHistory) };
-  historyClone[search] = res;
-  searchHistory.set(historyClone);
-};
+const cacheSearch = (search, res) =>
+  searchHistory.set({ ...get(searchHistory), [search]: res });

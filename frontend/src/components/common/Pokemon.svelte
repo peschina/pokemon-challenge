@@ -50,6 +50,7 @@
   }
   img {
     cursor: pointer;
+    height: 2rem;
     padding-left: 1rem;
     width: 2rem;
   }
