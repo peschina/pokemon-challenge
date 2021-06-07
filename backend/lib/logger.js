@@ -1,4 +1,4 @@
-const { createLogger, format, transports } = require("winston");
+const { createLogger, transports } = require("winston");
 
 let logger;
 

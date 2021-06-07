@@ -1,6 +1,6 @@
 import { get } from "svelte/store";
-import { searchHistory } from "../lib/store";
 import { GET } from "./httpServices";
+import { searchHistory } from "../lib/store";
 
 export const getPokemonDescription = async (name) => {
   try {
@@ -11,10 +11,10 @@ export const getPokemonDescription = async (name) => {
     }
 
     const res = await GET(`/pokemon/${name}`);
-    cacheSearch(name, res)
+    cacheSearch(name, res);
     return res;
   } catch (error) {
-    cacheSearch(name, error)
+    cacheSearch(name, error);
     throw error;
   }
 };
@@ -23,4 +23,4 @@ const cacheSearch = (search, res) => {
   const historyClone = { ...get(searchHistory) };
   historyClone[search] = res;
   searchHistory.set(historyClone);
-}
+};

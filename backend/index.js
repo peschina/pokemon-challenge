@@ -3,6 +3,8 @@ const cors = require("cors");
 const error = require("./middleware/error");
 const pokemon = require("./routes/pokemon");
 const { initLogger } = require("./lib/logger");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDoc = require("./swagger.json");
 
 const app = express();
 
@@ -17,6 +19,11 @@ app.use(
 
 app.use(express.json());
 app.use("/api/pokemon", pokemon);
+app.use(
+  '/api-docs',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDoc)
+);
 app.use(error);
 
 const port = process.env.port || 3000;
