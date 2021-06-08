@@ -2,7 +2,15 @@ language: node_js
 node_js:
   - "14.15.0"
 script:
+  - echo '**************building backend**************'
   - cd backend
+  - echo 'Installing dependencies'
+  - npm install
+  - echo 'Running tests'
+  - npm run test
+  - echo '**************building frontend**************'
+  - cd ..
+  - cd frontend
   - echo 'Installing dependencies'
   - npm install
   - echo 'Running tests'
