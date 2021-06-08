@@ -14,6 +14,6 @@ script:
   - echo '**************Installing dependencies**************'
   - npm install
   - echo '**************Build**************'
-  - npm run build
+  - npm run build:local
   - echo '**************Running tests**************'
   - npm run test
