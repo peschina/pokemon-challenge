@@ -4,14 +4,16 @@ node_js:
 script:
   - echo '**************building backend**************'
   - cd backend
-  - echo 'Installing dependencies'
+  - echo '**************Installing dependencies**************'
   - npm install
-  - echo 'Running tests'
+  - echo '**************Running tests**************'
   - npm run test
   - echo '**************building frontend**************'
   - cd ..
   - cd frontend
-  - echo 'Installing dependencies'
+  - echo '**************Installing dependencies**************'
   - npm install
-  - echo 'Running tests'
+  - echo '**************Build**************'
+  - npm run build
+  - echo '**************Running tests**************'
   - npm run test
