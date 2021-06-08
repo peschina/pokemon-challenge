@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  frontend:
+    build: ./frontend/
+    container_name: pokemon-ui
+    restart: always
+    networks:
+      - default
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - backend
+  backend:
+    build: ./backend/
+    container_name: node-pokemon-app
+    restart: always
+    networks:
+      - default
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+networks:
+  default: {}

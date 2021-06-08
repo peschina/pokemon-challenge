@@ -6,25 +6,24 @@ A simple responsive web app with a search engine, that given a Pokemon name, ret
 
 ## How to run it
 
-<ins>Important notice</ins>: node modules need to be installed, just once, before trying to run the applications or tests.
-
-### Locally
+### Docker Compose
 
 Requirements:
 
-- [Node.js](https://nodejs.org/en/). It's recommended that you use the LTS version.
+- [Docker Compose](https://docs.docker.com/compose/install/) (v. 1.29.2) and [Docker Engine](https://docs.docker.com/engine/install/).
 
-Clone the project on your local machine and navigate to the backend folder inside the project folder. Open a terminal and run:
+Clone the project on your local machine and navigate to the project folder. Run in a terminal:
 ```
-npm i
-npm run start
+docker-compose up -d
 ```
-Open another terminal, navigate to the frontend folder and run:
+
+then open your browser and navigate to http://localhost:5000.
+
+If something goes wrong you can stop the process with
 ```
-npm i
-npm run dev
+docker-compose down
 ```
-Open your browser and navigate to http://localhost:5000
+and try running the applications with just Docker
 
 ### Docker
 
@@ -44,9 +43,27 @@ docker run -p 5000:5000 -d pokemon-ui
 ```
 Open your browser and navigate to http://localhost:5000
 
+### Locally
+
+Requirements:
+
+- [Node.js](https://nodejs.org/en/). It's recommended that you use the LTS version.
+
+Clone the project on your local machine and navigate to the backend folder inside the project folder. Open a terminal and run:
+```
+npm i
+npm run start
+```
+Open another terminal, navigate to the frontend folder and run:
+```
+npm i
+npm run dev
+```
+Open your browser and navigate to http://localhost:5000
+
 ## How to test
 
-Open a terminal and navigate to the backend folder or to the frontend folder (depending on what you want to test).
+Tests are executed locally. Open a terminal and navigate to the backend folder or to the frontend folder (depending on what you want to test).
 If you haven't installed node modules yet, run:
 
 ```
@@ -82,12 +99,10 @@ This project is composed of:
 - Code is compiled with [Babel](https://babeljs.io/)
 - Checks for unused CSS and compiler errors are executed with [Svelte Check](https://www.npmjs.com/package/svelte-check). You can also execute just the checks running `npm run svelte-check`
 - Routing is implemented with [svelte-routing](https://www.npmjs.com/package/svelte-routing), a declarative Svelte routing library
-- It has [Postcss](https://postcss.org/) and [svelte-preprocess](https://github.com/sveltejs/svelte-preprocess) to deal with CSS more easily.
 - Please notice that Internet Explorer is <ins>not</ins> supported.
 
 ## Improvement ideas
 
-- [Docker Compose](https://docs.docker.com/compose/) for running both containers with a single command
 - Assuming that the API exposed by the backend application could be called by multiple frontend apps, it would be wise to add a cache on the backend too
 - [Morgan](https://www.npmjs.com/package/morgan) could be added for some nice HTTP request logs
 - Winston (the logger) could be used in a more extensive way, logging different levels of information and on more transports
@@ -96,7 +111,7 @@ This project is composed of:
 - Increase cross-browser support
 - It would be cool to create a custom component for displaying Icons using svg elements
 - Using [Autoprefixer](https://www.npmjs.com/package/autoprefixer) plugin to add vendor prefixes to CSS rules
-- Staging and production environments are setup on the frontend application, but not on the backend
+- Staging and production environments are set up on the frontend application, but not on the backend
 
 ## Credits
 
