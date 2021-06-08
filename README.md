@@ -1,5 +1,7 @@
 # Pokemon searcher
 
+[![Build Status](https://travis-ci.com/peschina/pokemon-challenge.svg?branch=main)](https://travis-ci.com/peschina/pokemon-challenge)
+
 A simple responsive web app with a search engine, that given a Pokemon name, returns its description. Pokemon searched can be saved in a persistent favourites list.
 
 [PokeApi](https://pokeapi.co/) service is used to fetch Pokemons' description.
